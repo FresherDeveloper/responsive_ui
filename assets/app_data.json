@@ -1,0 +1,26 @@
+{
+  
+  "portfolioDetail": "I am a UI designer with a passion for creating intuitive and visually appealing user interfaces. I have a strang understanding of design principles and work closely with developers to bring my designs to life I have had the opportunity to work with a variety of clients of a studio and am always striving to improve my skills and stay up- to-dare on the latest design trends",
+  
+  "headerList":[
+    {
+      "text1": "2+",
+      "color": "#4CAF50",
+      "text2": "Years Experience",
+      "textColor": "#FFFFFF"
+    },
+    {
+      "text1": "54+",
+      "color": "#FFC107",
+      "text2": "Handled Project",
+      "textColor": "#000000"
+    },
+    {
+      "text1": "40+",
+      "color": "#FF5252",
+      "text2": "Clients",
+      "textColor": "#FFFFFF"
+    }
+  ]
+  
+}
