@@ -13,12 +13,12 @@ class FooterPart2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     bool isMobile=size.width<460;
+    bool isMobile = size.width < 460;
     return FutureBuilder<AppData>(
       future: AppService().loadData(),
       builder: (BuildContext context, AsyncSnapshot<AppData> snapshot) {
         if (!snapshot.hasData) {
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         }
         final portfolioDetail = snapshot.data!.portfolioDetail;
 
@@ -37,7 +37,7 @@ class FooterPart2 extends StatelessWidget {
                     width: !isMobile ? size.width * .22 : size.width,
                     child: Text(
                       portfolioDetail!,
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
@@ -54,7 +54,7 @@ class FooterPart2 extends StatelessWidget {
     //     borderRadius: BorderRadius.circular(10)),
     //   child: Column(
     //     crossAxisAlignment: CrossAxisAlignment.start,
-      
+
     //     children: [
     //       const FooterRowText(text1: "About", text2: "Resume"),
     //         Expanded(
@@ -62,7 +62,7 @@ class FooterPart2 extends StatelessWidget {
     //             child: SizedBox(
     //               width: !isMobile? size.width*.22:size.width,
     //               child: const Text("I am a UI designer with a passion for creating intuitive and visually appealing user interfaces. I have a strang understanding of design principles and work closely with developers to bring my designs to life I have had the opportunity to work with a variety of clients of a studio and am always striving to improve my skills and stay up- to-dare on the latest design trends",
-                   
+
     //                style: TextStyle(color: Colors.white),),
     //             ),
     //           ),
@@ -71,4 +71,3 @@ class FooterPart2 extends StatelessWidget {
     //   ));
   }
 }
-

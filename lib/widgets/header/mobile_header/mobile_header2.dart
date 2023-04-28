@@ -13,21 +13,16 @@ class MobileHeader2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     bool isMobile=size.width<505;
-    bool isIpad=size.width>=505&&size.width<1366;
     return Column(
-     // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-        
-          margin: EdgeInsets.only(top: 10),
-           padding: const EdgeInsets.all(10),
-           decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 27, 27, 27),
-            borderRadius: BorderRadius.circular(10)),
+          margin: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 27, 27, 27),
+              borderRadius: BorderRadius.circular(10)),
           child: Row(
-            
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               RichText(
@@ -57,34 +52,26 @@ class MobileHeader2 extends StatelessWidget {
         ),
         FittedBox(
           child: Container(
-            // height: 500,
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Row(
-              
-              //crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  // margin: const EdgeInsets.all(10),
-                  height:isMobile?size.height*.4: size.height * .47,
-                  //width:isMobile?size.width*.4: size.width*.17,
+                SizedBox(
+                  height: size.height * .4,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
                       "assets/images/photo.png",
-                    
-                      // height: size.height*.8,
                       fit: BoxFit.fill,
                     ),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10,),
+                  padding: const EdgeInsets.only(
+                    left: 10,
+                  ),
                   child: Column(
-                    
-                    mainAxisAlignment:
-                        MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment:
-                        CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
                         width: size.width,
@@ -96,17 +83,13 @@ class MobileHeader2 extends StatelessWidget {
                       ),
                       Container(
                         width: size.width,
-                        //height: 300,
-                         margin: const EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            color: const Color.fromARGB(
-                                255, 27, 27, 27),
-                            borderRadius:
-                                BorderRadius.circular(10)),
+                            color: const Color.fromARGB(255, 27, 27, 27),
+                            borderRadius: BorderRadius.circular(10)),
                         child: Column(
-                          mainAxisAlignment:
-                              MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             RowText(
                                 size: size,
@@ -120,33 +103,22 @@ class MobileHeader2 extends StatelessWidget {
                         ),
                       ),
                       Container(
-                     
                         width: size.width,
-                        // margin: const EdgeInsets.all(10),
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            color: const Color.fromARGB(
-                                255, 27, 27, 27),
-                            borderRadius:
-                                BorderRadius.circular(10)),
+                            color: const Color.fromARGB(255, 27, 27, 27),
+                            borderRadius: BorderRadius.circular(10)),
                         child: Row(
-                          mainAxisAlignment:
-                              MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: const [
                             AppIcon(
-                                icon: FontAwesomeIcons
-                                    .linkedinIn,
+                                icon: FontAwesomeIcons.linkedinIn,
                                 color: Colors.blue),
                             AppIcon(
-                              icon: FontAwesomeIcons
-                                  .dribbble,
+                              icon: FontAwesomeIcons.dribbble,
                             ),
-                            AppIcon(
-                                icon: FontAwesomeIcons
-                                    .twitter),
-                            AppIcon(
-                                icon: FontAwesomeIcons
-                                    .instagram),
+                            AppIcon(icon: FontAwesomeIcons.twitter),
+                            AppIcon(icon: FontAwesomeIcons.instagram),
                           ],
                         ),
                       )
@@ -161,5 +133,3 @@ class MobileHeader2 extends StatelessWidget {
     );
   }
 }
-
-

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import 'package:responsive_ui/widgets/footer/footer_part2.dart';
@@ -11,35 +13,34 @@ class MobileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     
     final size = MediaQuery.of(context).size;
-   
-    print("Mobile view:$size");
+
+    log("Mobile view:$size");
     List myImages = [
       "assets/images/image2.png",
       "assets/images/image3.png",
       "assets/images/image4.png"
     ];
-    List<Map<String, dynamic>> myList = [
-      {
-        "text1": "2+",
-        "color": const Color.fromARGB(255, 76, 175, 80),
-        "text2": "Years Experience",
-        "textColor": Colors.white
-      },
-      {
-        "text1": "54+",
-        "color": Colors.amber,
-        "text2": "Handled Project",
-        "textColor": Colors.black
-      },
-      {
-        "text1": "40+",
-        "color": Colors.redAccent,
-        "text2": "Clients",
-        "textColor": Colors.white
-      },
-    ];
+    // List<Map<String, dynamic>> myList = [
+    //   {
+    //     "text1": "2+",
+    //     "color": const Color.fromARGB(255, 76, 175, 80),
+    //     "text2": "Years Experience",
+    //     "textColor": Colors.white
+    //   },
+    //   {
+    //     "text1": "54+",
+    //     "color": Colors.amber,
+    //     "text2": "Handled Project",
+    //     "textColor": Colors.black
+    //   },
+    //   {
+    //     "text1": "40+",
+    //     "color": Colors.redAccent,
+    //     "text2": "Clients",
+    //     "textColor": Colors.white
+    //   },
+    // ];
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -54,16 +55,18 @@ class MobileView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                 
+                SizedBox(
                     height: size.height * .35,
-                    child: MobileHeader1(size: size, myList: myList)),
-                    
+                    child: MobileHeader1(
+                      size: size,
+                    )),
                 MobileHeader2(size: size),
                 Expanded(
                     flex: 3,
                     child: MobileFooter1(size: size, myImages: myImages)),
-                    SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
                 Expanded(flex: 2, child: FooterPart2(size: size)),
               ],
             ),

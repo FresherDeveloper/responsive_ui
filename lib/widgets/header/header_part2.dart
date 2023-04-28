@@ -13,22 +13,17 @@ class HeaderPart2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
-     bool isIpad = size.width >= 770 && size.width < 1366;
     return SizedBox(
-     // color: Colors.lightBlue,
-      height: size.height /1.5,
-      //width:size.width*.5 ,
+      height: size.height / 1.5,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            
-             padding: const EdgeInsets.all(8),
-             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 27, 27, 27),
-              borderRadius: BorderRadius.circular(10)),
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 27, 27, 27),
+                borderRadius: BorderRadius.circular(10)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -59,22 +54,16 @@ class HeaderPart2 extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Row(
-                
-                //crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    // margin: const EdgeInsets.all(10),
+                  SizedBox(
                     height: size.height * .47,
-                    width: size.width*.17,
+                    width: size.width * .17,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
                         "assets/images/photo.png",
-                      
-                        // height: size.height*.8,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -83,10 +72,8 @@ class HeaderPart2 extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 10),
                       child: Column(
-                        mainAxisAlignment:
-                            MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment:
-                            CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           RowText(
                             size: size,
@@ -94,18 +81,12 @@ class HeaderPart2 extends StatelessWidget {
                             text2: 'Bhima Sakti',
                           ),
                           Container(
-                           // width: 400,
-                            //height: 300,
-                            // margin: const EdgeInsets.all(10),
                             padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                                color: const Color.fromARGB(
-                                    255, 27, 27, 27),
-                                borderRadius:
-                                    BorderRadius.circular(10)),
+                                color: const Color.fromARGB(255, 27, 27, 27),
+                                borderRadius: BorderRadius.circular(10)),
                             child: Column(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 RowText(
                                     size: size,
@@ -119,33 +100,21 @@ class HeaderPart2 extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            
-                            //width: size.width/2,
-                            // margin: const EdgeInsets.all(10),
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             decoration: BoxDecoration(
-                                color: const Color.fromARGB(
-                                    255, 27, 27, 27),
-                                borderRadius:
-                                    BorderRadius.circular(10)),
+                                color: const Color.fromARGB(255, 27, 27, 27),
+                                borderRadius: BorderRadius.circular(10)),
                             child: Row(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: const [
                                 AppIcon(
-                                    icon: FontAwesomeIcons
-                                        .linkedinIn,
+                                    icon: FontAwesomeIcons.linkedinIn,
                                     color: Colors.blue),
                                 AppIcon(
-                                  icon: FontAwesomeIcons
-                                      .dribbble,
+                                  icon: FontAwesomeIcons.dribbble,
                                 ),
-                                AppIcon(
-                                    icon: FontAwesomeIcons
-                                        .twitter),
-                                AppIcon(
-                                    icon: FontAwesomeIcons
-                                        .instagram),
+                                AppIcon(icon: FontAwesomeIcons.twitter),
+                                AppIcon(icon: FontAwesomeIcons.instagram),
                               ],
                             ),
                           )
@@ -162,5 +131,3 @@ class HeaderPart2 extends StatelessWidget {
     );
   }
 }
-
-

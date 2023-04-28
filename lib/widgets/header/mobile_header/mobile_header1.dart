@@ -6,25 +6,21 @@ class MobileHeader1 extends StatelessWidget {
   const MobileHeader1({
     super.key,
     required this.size,
-    required this.myList,
+    this.myList,
   });
 
   final Size size;
-  final List<Map<String, dynamic>> myList;
+  final List<Map<String, dynamic>>? myList;
 
   @override
   Widget build(BuildContext context) {
     bool isMobile = size.width < 505;
-    bool isIpad = size.width >= 505 && size.width < 1366;
-    print(size.width);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          //height: size.height * .35,
           padding: const EdgeInsets.all(10),
-          // width: size.width / 2,
-          //size.width * .25,
           decoration: BoxDecoration(
               color: const Color.fromARGB(255, 27, 27, 27),
               borderRadius: BorderRadius.circular(10)),
@@ -83,7 +79,7 @@ class MobileHeader1 extends StatelessWidget {
                       final headerList = data.headerList!;
                       return GridView.builder(
                         padding: EdgeInsets.zero,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         itemCount: headerList.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
@@ -97,19 +93,16 @@ class MobileHeader1 extends StatelessWidget {
                                   header.color!.replaceAll('#', ''),
                                   radix: 16) +
                               0xFF000000);
-                          print("color:$color");
 
                           final textColor = Color(int.parse(
                                   header.textColor!.replaceAll('#', ''),
                                   radix: 16) +
                               0xFF000000);
-                          print("textColor:$textColor");
 
                           return FittedBox(
                             child: Container(
                               height: size.height * 0.4,
                               width: size.width * 0.4,
-                            
                               decoration: BoxDecoration(
                                 color: color,
                                 borderRadius: BorderRadius.circular(10),
@@ -143,12 +136,11 @@ class MobileHeader1 extends StatelessWidget {
                         },
                       );
                     } else if (snapshot.hasError) {
-                      print(snapshot.error);
                       return Center(
                         child: Text("Error: ${snapshot.error}"),
                       );
                     } else {
-                      return Center(
+                      return const Center(
                         child: CircularProgressIndicator(),
                       );
                     }

@@ -13,46 +13,38 @@ class MobileFooter1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   
     return Container(
-     // width: size.width/2,
-     
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
           color: const Color.fromARGB(255, 27, 27, 27),
           borderRadius: BorderRadius.circular(10)),
       child: Column(
-   
         children: [
-          const FooterRowText(text1:"Ui PortFolio" ,text2:"See All" ),
+          const FooterRowText(text1: "Ui PortFolio", text2: "See All"),
           Expanded(
-          
-            child: 
-            GridView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                      itemCount: myImages.length,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3,
-                        mainAxisSpacing: 10.0,
-                        crossAxisSpacing: 10.0,
-                      ),
-                      itemBuilder:
-                          (BuildContext context, int index) {
-                            
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.asset(myImages[index],height: 100,)),
-                        );
-                      },
-                    ),
-                    ),
+            child: GridView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: myImages.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 10.0,
+                crossAxisSpacing: 10.0,
+              ),
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        myImages[index],
+                        height: 100,
+                      )),
+                );
+              },
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
-
